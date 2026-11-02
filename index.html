@@ -1,1 +1,18 @@
-INDEX_CONTENT
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Практикум ДУП.03</title></head>
+<body style="font:16px sans-serif;color:#0f1b2d;background:#eef2f9;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center">
+<p id="m">Загрузка практикума…</p>
+<script>
+/* Временный загрузчик: отдаёт сайт в том виде, в каком он был до коммита c1084058. */
+var COMMIT='4e2c8f02a4ddec8c2a3c0c5ed572a30792146542';
+var URLS=[
+ 'https://cdn.jsdelivr.net/gh/novikovks52-source/dup03-praktikum@'+COMMIT+'/index.html',
+ 'https://raw.githubusercontent.com/novikovks52-source/dup03-praktikum/'+COMMIT+'/index.html'
+];
+(function go(i){
+ fetch(URLS[i],{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.text();})
+ .then(function(html){document.open();document.write(html);document.close();})
+ .catch(function(e){ if(URLS[i+1]) go(i+1); else document.getElementById('m').textContent='Не удалось загрузить сайт. Попробуйте обновить страницу.'; });
+})(0);
+</script></body></html>
